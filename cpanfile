@@ -12,6 +12,8 @@ requires 'Test::WWW::Mechanize::PSGI';
 requires 'Text::Xslate', '2.0009';
 requires 'Time::Piece', '1.20';
 requires 'perl', '5.010_001';
+requires 'Amon2::Auth', '0.04';
+requires 'Net::OAuth', '0.28';
 
 on configure => sub {
     requires 'Module::Build', '0.38';

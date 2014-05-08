@@ -15,6 +15,14 @@ sub dispatch {
 __PACKAGE__->load_plugins(
     'Web::FillInFormLite',
     'Web::JSON',
+    'Web::Auth', +{
+        module => 'Twitter',
+        on_finished => sub {
+            my ($c, $access_token, $access_token_secret, $user_id, $screen_name) = @_;
+            $c->session->set('user_id', $user_id);
+            return $c->redirect('/'),
+        },
+    },
     '+EnchoOchu::Web::Plugin::Session',
 );
 
@@ -44,5 +52,10 @@ __PACKAGE__->add_trigger(
         $res->header( 'Cache-Control' => 'private' );
     },
 );
+
+sub user {
+    my ($c) = @_;
+    return $c->session->get('user_id');
+}
 
 1;

@@ -10,7 +10,7 @@ any '/' => sub {
     });
 };
 
-post '/account/logout' => sub {
+get '/account/logout' => sub {
     my ($c) = @_;
     $c->session->expire();
     return $c->redirect('/');
