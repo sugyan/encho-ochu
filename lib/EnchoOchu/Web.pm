@@ -19,6 +19,17 @@ __PACKAGE__->load_plugins(
         module => 'Twitter',
         on_finished => sub {
             my ($c, $access_token, $access_token_secret, $user_id, $screen_name) = @_;
+            my $member = $c->db->single('member', +{ id => $user_id });
+            unless ($member) {
+                $member = $c->db->insert('member' => +{
+                    id => $user_id,
+                    name => $screen_name,
+                });
+            };
+            $member->update(+{
+                access_token => $access_token,
+                access_token_secret => $access_token_secret,
+            });
             $c->session->set('user_id', $user_id);
             return $c->redirect('/'),
         },
@@ -55,7 +66,12 @@ __PACKAGE__->add_trigger(
 
 sub user {
     my ($c) = @_;
-    return $c->session->get('user_id');
+    return $c->{member} if $c->{member};
+    if (my $user_id = $c->session->get('user_id')) {
+        return $c->{member} = $c->db->single('member' => +{ id => $user_id });
+    } else {
+        return undef;
+    }
 }
 
 1;
