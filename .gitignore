@@ -17,3 +17,4 @@ MYMETA.yml
 /local/
 /.carton/
 .env
+config/production.pl
