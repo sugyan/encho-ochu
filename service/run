@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cd /home/sugyan/dev/sugyan/encho-ochu
+
+export PLACK_ENV=production
+
+exec 2>&1
+exec setuidgid sugyan \
+    /home/sugyan/.plenv/versions/5.16.3/bin/carton exec -- /home/sugyan/.plenv/versions/5.16.3/bin/perl script/worker.pl
