@@ -14,6 +14,7 @@ requires 'Time::Piece', '1.20';
 requires 'perl', '5.010_001';
 requires 'Amon2::Auth', '0.04';
 requires 'Net::OAuth', '0.28';
+requires 'AnyEvent::Twitter::Stream', '0.27';
 
 on configure => sub {
     requires 'Module::Build', '0.38';
