@@ -27,9 +27,11 @@ my $listener =  AnyEvent::Twitter::Stream->new(
     on_tweet => sub {
         my $tweet = shift;
         return unless $tweet->{text};
-        return unless $tweet->{user}{id_str} ne '';
+        return if $tweet->{user}{id_str} ne $c->config->{target}; # 本人のものだけ抽出
+        return if $tweet->{in_reply_to_user_id_str};              # 返信は無視
 
         debugf(ddf($tweet));
+        infof($tweet->{text});
         if (decode_utf8($tweet->{text}) =~ /(?:帰る|かえる)/) {
             infof($tweet->{text});
             my $members = $c->db->search('member');
