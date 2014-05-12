@@ -15,6 +15,8 @@ requires 'Amon2::Auth', '0.04';
 requires 'Net::OAuth', '0.28';
 requires 'DBD::mysql';
 requires 'AnyEvent::Twitter::Stream', '0.27';
+requires 'AnyEvent::Twitter', '0.64';
+requires 'Log::Minimal', '0.18';
 
 on configure => sub {
     requires 'Module::Build', '0.38';
