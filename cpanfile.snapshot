@@ -157,6 +157,25 @@ DISTRIBUTIONS
       AnyEvent 5.33
       ExtUtils::MakeMaker 0
       common::sense 3.3
+  AnyEvent-Twitter-0.64
+    pathname: P/PU/PUNYTAN/AnyEvent-Twitter-0.64.tar.gz
+    provides:
+      AnyEvent::Twitter 0.64
+    requirements:
+      AnyEvent 5.34
+      AnyEvent::HTTP 2.12
+      Data::Recursive::Encode 0.04
+      Digest::SHA 5.62
+      ExtUtils::MakeMaker 6.59
+      HTTP::Request::Common 6.04
+      JSON 2.53
+      Net::OAuth 0.27
+      Net::SSLeay 1.35
+      Test::More 0.98
+      Time::Piece 1.2
+      URI 1.58
+      URI::Escape 3.3
+      perl 5.008
   AnyEvent-Twitter-Stream-0.27
     pathname: M/MI/MIYAGAWA/AnyEvent-Twitter-Stream-0.27.tar.gz
     provides:
@@ -351,6 +370,21 @@ DISTRIBUTIONS
       Test::More 0.47
       Tie::Hash 0
       perl 5.006
+  DBD-mysql-4.027
+    pathname: C/CA/CAPTTOFU/DBD-mysql-4.027.tar.gz
+    provides:
+      Bundle::DBD::mysql 4.027
+      DBD::mysql 4.027
+      DBD::mysql::GetInfo undef
+      DBD::mysql::db 4.027
+      DBD::mysql::dr 4.027
+      DBD::mysql::st 4.027
+    requirements:
+      DBI 1.08
+      Data::Dumper 0
+      Test::Deep 0
+      Test::More 0
+      perl 5.008001
   DBI-1.631
     pathname: T/TI/TIMB/DBI-1.631.tar.gz
     provides:
@@ -537,6 +571,14 @@ DISTRIBUTIONS
       Class::Accessor::Lite 0.05
       ExtUtils::MakeMaker 6.42
       Test::More 0.96
+      perl 5.008001
+  Data-Recursive-Encode-0.04
+    pathname: T/TO/TOKUHIROM/Data-Recursive-Encode-0.04.tar.gz
+    provides:
+      Data::Recursive::Encode 0.04
+    requirements:
+      ExtUtils::MakeMaker 6.42
+      Test::More 0.94
       perl 5.008001
   Devel-CheckCompiler-0.05
     pathname: S/SY/SYOHEX/Devel-CheckCompiler-0.05.tar.gz
@@ -1020,6 +1062,18 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.52
       Test::More 0.82
       perl 5.00503
+  Log-Minimal-0.18
+    pathname: K/KA/KAZEBURO/Log-Minimal-0.18.tar.gz
+    provides:
+      Log::Minimal 0.18
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      Data::Dumper 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.38
+      Scalar::Util 0
+      Term::ANSIColor 0
   MRO-Compat-0.12
     pathname: B/BO/BOBTFISH/MRO-Compat-0.12.tar.gz
     provides:
@@ -1724,6 +1778,65 @@ DISTRIBUTIONS
       Test::Requires 0
       Test::SharedFork 0.15
       parent 0
+  Test-Deep-0.112
+    pathname: R/RJ/RJBS/Test-Deep-0.112.tar.gz
+    provides:
+      Test::Deep 0.112
+      Test::Deep::All undef
+      Test::Deep::Any undef
+      Test::Deep::Array undef
+      Test::Deep::ArrayEach undef
+      Test::Deep::ArrayElementsOnly undef
+      Test::Deep::ArrayLength undef
+      Test::Deep::ArrayLengthOnly undef
+      Test::Deep::Blessed undef
+      Test::Deep::Boolean undef
+      Test::Deep::Cache undef
+      Test::Deep::Cache::Simple undef
+      Test::Deep::Class undef
+      Test::Deep::Cmp undef
+      Test::Deep::Code undef
+      Test::Deep::Hash undef
+      Test::Deep::HashEach undef
+      Test::Deep::HashElements undef
+      Test::Deep::HashKeys undef
+      Test::Deep::HashKeysOnly undef
+      Test::Deep::Ignore undef
+      Test::Deep::Isa undef
+      Test::Deep::ListMethods undef
+      Test::Deep::MM undef
+      Test::Deep::Methods undef
+      Test::Deep::NoTest undef
+      Test::Deep::Number undef
+      Test::Deep::Obj undef
+      Test::Deep::Ref undef
+      Test::Deep::RefType undef
+      Test::Deep::Regexp undef
+      Test::Deep::RegexpMatches undef
+      Test::Deep::RegexpRef undef
+      Test::Deep::RegexpRefOnly undef
+      Test::Deep::RegexpVersion undef
+      Test::Deep::ScalarRef undef
+      Test::Deep::ScalarRefOnly undef
+      Test::Deep::Set undef
+      Test::Deep::Shallow undef
+      Test::Deep::Stack undef
+      Test::Deep::String undef
+      Test::Deep::SubHash undef
+      Test::Deep::SubHashElements undef
+      Test::Deep::SubHashKeys undef
+      Test::Deep::SubHashKeysOnly undef
+      Test::Deep::SuperHash undef
+      Test::Deep::SuperHashElements undef
+      Test::Deep::SuperHashKeys undef
+      Test::Deep::SuperHashKeysOnly undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      List::Util 1.09
+      Scalar::Util 1.09
+      Test::More 0
+      Test::NoWarnings 0.02
+      Test::Tester 0.04
   Test-Exception-0.32
     pathname: A/AD/ADIE/Test-Exception-0.32.tar.gz
     provides:
@@ -1822,6 +1935,17 @@ DISTRIBUTIONS
       Module::Build 0.38
       Test::More 0.96
       perl 5.008001
+  Test-NoWarnings-1.04
+    pathname: A/AD/ADAMK/Test-NoWarnings-1.04.tar.gz
+    provides:
+      Test::NoWarnings 1.04
+      Test::NoWarnings::Warning 1.04
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::Builder 0.86
+      Test::More 0.47
+      Test::Tester 0.107
+      perl 5.006
   Test-Requires-0.07
     pathname: T/TO/TOKUHIROM/Test-Requires-0.07.tar.gz
     provides:
@@ -1867,6 +1991,16 @@ DISTRIBUTIONS
       Test::SharedFork 0.19
       Time::HiRes 0
       perl 5.008001
+  Test-Tester-0.109
+    pathname: F/FD/FDALY/Test-Tester-0.109.tar.gz
+    provides:
+      Test::Tester 0.109
+      Test::Tester::Capture undef
+      Test::Tester::CaptureRunner undef
+      Test::Tester::Delegate undef
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::Builder 0
   Test-WWW-Mechanize-1.44
     pathname: P/PE/PETDANCE/Test-WWW-Mechanize-1.44.tar.gz
     provides:
