@@ -23,7 +23,7 @@ __PACKAGE__->load_plugins(
             unless ($member) {
                 $member = $c->db->insert('member' => +{
                     id => $user_id,
-                    name => $screen_name,
+                    screen_name => $screen_name,
                 });
             };
             $member->update(+{

@@ -1,13 +1,15 @@
-use File::Spec;
-use File::Basename qw(dirname);
-my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
-my $dbpath = File::Spec->catfile($basedir, 'db', 'development.db');
 return +{
     'DBI' => [
-        "dbi:SQLite:dbname=$dbpath", '', '',
+        'dbi:mysql:dbname=encho_ochu', 'root', '',
         +{
-            sqlite_unicode => 1,
-        }
+            AutoCommit => 1,
+            PrintError => 0,
+            RaiseError => 1,
+            ShowErrorStatement => 1,
+            AutoInactiveDestroy => 1,
+            mysql_enable_utf8 => 1,
+            mysql_auto_reconnect => 0,
+        },
     ],
     'Auth' => +{
         'Twitter' => +{

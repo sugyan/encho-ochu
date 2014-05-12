@@ -1,5 +1,4 @@
 requires 'Amon2', '6.02';
-requires 'DBD::SQLite', '1.33';
 requires 'HTML::FillInForm::Lite', '1.11';
 requires 'HTTP::Session2', '0.04';
 requires 'JSON', '2.50';
@@ -14,6 +13,7 @@ requires 'Time::Piece', '1.20';
 requires 'perl', '5.010_001';
 requires 'Amon2::Auth', '0.04';
 requires 'Net::OAuth', '0.28';
+requires 'DBD::mysql';
 requires 'AnyEvent::Twitter::Stream', '0.27';
 
 on configure => sub {

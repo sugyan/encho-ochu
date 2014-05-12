@@ -10,7 +10,7 @@ base_row_class 'EnchoOchu::DB::Row';
 table {
     name 'member';
     pk 'id';
-    columns qw(id name access_token access_token_secret);
+    columns qw(id screen_name access_token access_token_secret);
 };
 
 1;
