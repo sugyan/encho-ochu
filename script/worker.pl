@@ -10,7 +10,7 @@ use lib File::Spec->catfile(dirname(__FILE__), '..', 'lib');
 use AnyEvent::Twitter;
 use AnyEvent::Twitter::Stream;
 use EnchoOchu;
-use Encode qw(decode_utf8);
+use Encode qw(encode_utf8 decode_utf8);
 use Log::Minimal;
 
 my $c = EnchoOchu->bootstrap;
@@ -24,6 +24,9 @@ my $listener =  AnyEvent::Twitter::Stream->new(
     token_secret    => $conf->{access_token_secret},
     method => 'filter',
     follow => $c->config->{target},
+    on_connect => sub {
+        infof('connected.');
+    },
     on_tweet => sub {
         my $tweet = shift;
         return unless $tweet->{text};
@@ -31,9 +34,8 @@ my $listener =  AnyEvent::Twitter::Stream->new(
         return if $tweet->{in_reply_to_user_id_str};              # 返信は無視
 
         debugf(ddf($tweet));
-        infof($tweet->{text});
+        infof(encode_utf8($tweet->{text}));
         if (decode_utf8($tweet->{text}) =~ /(?:帰る|かえる)/) {
-            infof($tweet->{text});
             my $members = $c->db->search('member');
             while (my $member = $members->next) {
                 my $c1 = AE::cv;
