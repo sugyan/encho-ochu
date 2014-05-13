@@ -1,5 +1,13 @@
 : cascade "include/layout.tx"
 
 : override content -> {
+<p>Twitterで<a href="https://twitter.com/encho5596" target="_blank">@encho5596</a>が「帰る」「かえる」と呟いたときに自動で「おちゅ」とリプライを送る。それだけのためのWebアプリです。</p>
+<p>あなたのTwitterアカウントで<a href="">ログイン</a>するだけで、自動リプライするよう登録されます。</p>
+<p>現在 <strong><: $count :></strong>人が登録しています。</p>
 
+: if c().user {
+<form action="/account/delete" method="POST">
+  <button class="btn btn-danger">登録を解除する</button>
+</form>
+: }
 : }
