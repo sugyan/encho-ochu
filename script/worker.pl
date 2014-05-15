@@ -38,9 +38,14 @@ my $listener =  AnyEvent::Twitter::Stream->new(
         if (decode_utf8($tweet->{text}) =~ /(?:帰る|かえる)/) {
             my $members = $c->db->search('member');
             while (my $member = $members->next) {
+                # 発動率80%とする
+                if (rand() < 0.2) {
+                    infof('%s was skipped', $member->screen_name);
+                    next;
+                }
                 my $c1 = AE::cv;
-                # ランダム秒数(0s~7s)待つ
-                my $rand = rand(7);
+                # ランダム秒数(1s~10s)待つ
+                my $rand = 1.0 + rand(9);
                 infof('%s: %f', $member->screen_name, $rand);
                 my $w; $w = AE::timer $rand, 0, sub {
                     $c1->send;
