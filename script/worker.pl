@@ -38,8 +38,8 @@ my $listener =  AnyEvent::Twitter::Stream->new(
         if (decode_utf8($tweet->{text}) =~ /(?:帰る|かえる)/) {
             my $members = $c->db->search('member');
             while (my $member = $members->next) {
-                # 発動率80%とする
-                if (rand() < 0.2) {
+                # 発動率30%とする
+                if (rand() < 0.7) {
                     infof('%s was skipped', $member->screen_name);
                     next;
                 }
